@@ -12,7 +12,7 @@ class Graph:
 
 #Iterative
     
-    def dfs_stack(self, start, goal=None):
+    def dfs_stack(self, start, goal):
         stack = [start]
         visited = set()
         traversal = []
@@ -42,19 +42,19 @@ class Graph:
 
 # Recursive DFS
  
-    def _dfs_util(self, v, visited):
-        visited.add(v)
-        print(v, end=" ")
+    # def _dfs_util(self, v, visited):
+    #     visited.add(v)
+    #     print(v, end=" ")
 
-        for neighbor in self.adj.get(v, []):
-            if neighbor not in visited:
-                self._dfs_util(neighbor, visited)
+    #     for neighbor in self.adj.get(v, []):
+    #         if neighbor not in visited:
+    #             self._dfs_util(neighbor, visited)
 
-    def dfs_recursive(self, start):
-        print(f"Recursive DFS starting from '{start}'")
-        visited = set()
-        self._dfs_util(start, visited)
-        print()
+    # def dfs_recursive(self, start):
+    #     print(f"Recursive DFS starting from '{start}'")
+    #     visited = set()
+    #     self._dfs_util(start, visited)
+    #     print()
 
 
 g = Graph()
@@ -80,5 +80,5 @@ g.add_edge('E', 'I')
 g.add_edge('I', 'L')
 
 
-traversal_path = g.dfs_stack(start='A', goal='Z')
+traversal_path = g.dfs_stack(start='A', goal='G')
 print("\nFinal Traversal Sequence until Goal:", " -> ".join(traversal_path))

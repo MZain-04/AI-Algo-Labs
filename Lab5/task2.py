@@ -1,6 +1,6 @@
 
 # Class to represent the graph using lists
-class Graph:
+class Graph():
 
     def __init__(self):
         # Each node has a list of its neighboring nodes
